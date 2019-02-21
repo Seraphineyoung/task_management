@@ -1,0 +1,41 @@
+{% extends "template.html" %}
+{% block content %}
+
+<div class="container-fluid">
+<div class="row">
+  <div class="col-md-3">
+  </div>
+  <div class="col-md-6">
+    <h1>Dashboard</h1>
+        </div>
+        <div class="col-md-3">
+        </div>
+        </div>
+
+
+        <div class="row">
+
+<div class="col-md-3">
+  </div>
+  {% for task in tasks %}
+
+    <div id="task_card" class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Title: <span>{{task.name}}</span></h5>
+        <p class="card-text">Description: <span>{{task.description}}</span></p>
+        <p class="card-text">Status: <span>{{task.status}}</span></p>
+        <p class="card-text">Start date: <span>{{task.date}}</span></p>
+
+      <a href="{{ url_for("api_get_task_by_id", taskId=task.id) }}"><button id="submit-{{task.id}}" type="submit" class="edit_btn btn">Edit</button></a>
+
+
+          <form id="delete-{{task.id}}" method="POST" action="{{ url_for("api_delete_task", taskId=task.id) }}">
+            <button id="submit-{{task.id}}" type="submit" class="btn btn-danger">Delete</button>
+          </form>
+
+          </div>
+
+          </div>
+
+          {% endfor %}
+      {% endblock %}

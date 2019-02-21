@@ -68,7 +68,7 @@ def api_get_task_by_id(taskId):
 def api_get_all_tasks():
     conn = get_db()
     result = get_all_tasks(conn)
-    return render_template("index.html", tasks=result)
+    return render_template("dashboard.html", tasks=result)
 
 
 

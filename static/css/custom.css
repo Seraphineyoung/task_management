@@ -55,3 +55,38 @@ body {
 
 /* calendar */
 /* ------------------------------------------------------------------------- */
+#task_card {
+  margin: 10px;
+  padding: 10px;
+}
+#task_card h5 span{
+  text-decoration: underline;
+}
+#task_card span{
+  font-size: 22px;
+  color: #AB9F9D;
+  font-family: 'Ropa Sans', sans-serif;
+}
+.edit_btn{
+  padding: 5px 20px;
+}
+.btn {
+  margin: 3px;
+}
+.showTablet {
+    display: none;
+}
+@media only screen and (max-width: 768px) {
+    .showLarge {
+    display: none;
+    }
+    .showTablet {
+    display: block;
+    }
+    .showTablet h1{
+    font-size: 20px;
+    }
+    .sidenav {
+    width: 30;
+    }
+}
